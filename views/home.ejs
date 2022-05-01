@@ -1,0 +1,13 @@
+<%- include('partials/header'); %>
+    <h1>HOME</h1>
+    <p><%= intro%></p>
+    <%newtask.forEach(function(posts){%>
+      <h1><%=posts.title%></h1>
+    <%  if(posts.content.length>100){%>
+      <p><%=posts.content.slice(0,100)+"..."%>  <a href="/posts/<%=posts._id%>">read more</a>
+</p>
+    <%}else{%>
+        <p><%=posts.content.slice(0,100)%></p>
+    <%}%>
+    <%});%>
+<%- include('partials/footer'); %>
